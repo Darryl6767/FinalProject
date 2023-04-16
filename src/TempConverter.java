@@ -1,11 +1,8 @@
-import javax.swing.*;
-private double fahrenheit2;
-
-private double fahrenheit2;
-private double celsius;
-
 public class TempConverter {
+    private double fahrenheit2;
 
+    //private double fahrenheit2;
+    private double celsius;
 
     public double convertCtoF(double celsius) {
         fahrenheit2 = (celsius * 1.8) + 32;
