@@ -23,16 +23,32 @@ public class Main extends javax.swing.JFrame {
         mitoKm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value:"));
+                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in miles:"));
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertMtoKm(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, df.format(finalValue));
+                JOptionPane.showMessageDialog(frame, value + " mi = " + df.format(finalValue) + "km");
             }
         });
         panel.add(mitoKm);
 
+        //Button mi to km
+        JButton kmtoMi = new JButton("Kilometers to Miles");
+        kmtoMi.setPreferredSize(new Dimension(200,50));
+        kmtoMi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in kilometers:"));
+                MileConverter i = new MileConverter();
+                double finalValue = i.convertKmtoM(value);
+                DecimalFormat df = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, value + " km = " + df.format(finalValue) + "mi");
+            }
+        });
+        panel.add(kmtoMi);
+
         frame.pack();
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     }
 }
