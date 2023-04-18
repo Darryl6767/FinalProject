@@ -27,7 +27,7 @@ public class Main extends javax.swing.JFrame {
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertMtoKm(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " mi = " + df.format(finalValue) + "km");
+                JOptionPane.showMessageDialog(frame, value + " mi = " + df.format(finalValue) + " km");
             }
         });
         panel.add(mitoKm);
@@ -42,10 +42,25 @@ public class Main extends javax.swing.JFrame {
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertKmtoM(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " km = " + df.format(finalValue) + "mi");
+                JOptionPane.showMessageDialog(frame, value + " km = " + df.format(finalValue) + " mi");
             }
         });
         panel.add(kmtoMi);
+
+        //Button C to F
+        JButton cToF = new JButton("Celsius to Fahrenheit");
+        cToF.setPreferredSize(new Dimension(200,50));
+        cToF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Celsius:"));
+                TempConverter i = new TempConverter();
+                double finalValue = i.convertCtoF(value);
+                DecimalFormat df = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, value + " C = " + df.format(finalValue) + " F");
+            }
+        });
+        panel.add(cToF);
 
         frame.pack();
         frame.setVisible(true);
