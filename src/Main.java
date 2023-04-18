@@ -83,5 +83,41 @@ public class Main extends javax.swing.JFrame {
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+        JButton FtoC = new JButton("Fahrenheit to Celsius");
+        FtoC.setPreferredSize(new Dimension(200, 50));
+        FtoC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int v = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter a value in Fahrenheit:"));
+                TempConverter t = new TempConverter();
+                double finalv = t.convertFtoC((double) v);
+                DecimalFormat d = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, "" + v + " Fahrenheit = " + d.format(finalv) + "Celsius" );
+
+            }
+        });
+        panel.add(FtoC);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo((Component) null);
+        JButton CtoF = new JButton("Celsius to Fahrenheit");
+        CtoF.setPreferredSize(new Dimension(200, 50));
+        CtoF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int v = Integer.parseInt((JOptionPane.showInputDialog(frame, "Enter a value in Celsius:")));
+                TempConverter t = new TempConverter();
+                double finalv = t.convertCtoF((double) v);
+                DecimalFormat d = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, "" + v + " Celsius = " + d.format(finalv) + "Fahrenheit" );
+
+            }
+        });
+        panel.add(CtoF);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo((Component) null);
     }
+
 }
+
