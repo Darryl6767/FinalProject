@@ -77,6 +77,9 @@ public class Main extends javax.swing.JFrame {
         });
         panel.add(fToC);
 
+        //Button lb to kg
+
+
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
