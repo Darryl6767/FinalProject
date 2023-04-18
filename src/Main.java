@@ -78,9 +78,40 @@ public class Main extends javax.swing.JFrame {
         panel.add(fToC);
 
         //Button lb to kg
+        JButton lbtokg = new JButton("Pounds to Kilograms");
+        lbtokg.setPreferredSize(new Dimension(200, 50));
+        lbtokg.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Pounds:"));
+                PoundConverter i = new PoundConverter();
+                double finalValue = i.convertPoundstoKg(value);
+                DecimalFormat df = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, value + " lb = " + df.format(finalValue) + " kg");
+            }
+        });
+        panel.add(lbtokg);
 
-
-
+        JButton kgtolb = new JButton("Kilogram to Pounds");
+        kgtolb.setPreferredSize(new Dimension(200, 50));
+        kgtolb.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Kilograms:"));
+                PoundConverter i = new PoundConverter();
+                double finalValue = i.convertKgtoPounds(value);
+                DecimalFormat df = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, value + " kg = " + df.format(finalValue) + " lb");
+            }
+        });
+        panel.add(kgtolb);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo((Component) null);
     }
 }
+
+
+
+
 
