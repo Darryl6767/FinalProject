@@ -62,6 +62,21 @@ public class Main extends javax.swing.JFrame {
         });
         panel.add(cToF);
 
+        //Button F to C
+        JButton fToC = new JButton("Fahrenheit to Celsius");
+        fToC.setPreferredSize(new Dimension(200,50));
+        fToC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Fahrenheit:"));
+                TempConverter i = new TempConverter();
+                double finalValue = i.convertFtoC(value);
+                DecimalFormat df = new DecimalFormat("#.#");
+                JOptionPane.showMessageDialog(frame, value + " F = " + df.format(finalValue) + " C");
+            }
+        });
+        panel.add(fToC);
+
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
