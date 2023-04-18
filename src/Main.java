@@ -10,16 +10,16 @@ public class Main extends javax.swing.JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Layout
-        frame.setPreferredSize(new Dimension(700,600));
+        frame.setPreferredSize(new Dimension(700, 600));
 
         //Color
         JPanel panel = new JPanel();
-        panel.setBackground(new java.awt.Color(167,199,231));
+        panel.setBackground(new java.awt.Color(167, 199, 231));
         frame.add(panel);
 
         //Button km to mi
         JButton mitoKm = new JButton("Miles to Kilometers");
-        mitoKm.setPreferredSize(new Dimension(200,50));
+        mitoKm.setPreferredSize(new Dimension(200, 50));
         mitoKm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,7 +34,7 @@ public class Main extends javax.swing.JFrame {
 
         //Button mi to km
         JButton kmtoMi = new JButton("Kilometers to Miles");
-        kmtoMi.setPreferredSize(new Dimension(200,50));
+        kmtoMi.setPreferredSize(new Dimension(200, 50));
         kmtoMi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,7 +49,7 @@ public class Main extends javax.swing.JFrame {
 
         //Button C to F
         JButton cToF = new JButton("Celsius to Fahrenheit");
-        cToF.setPreferredSize(new Dimension(200,50));
+        cToF.setPreferredSize(new Dimension(200, 50));
         cToF.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,7 +64,7 @@ public class Main extends javax.swing.JFrame {
 
         //Button F to C
         JButton fToC = new JButton("Fahrenheit to Celsius");
-        fToC.setPreferredSize(new Dimension(200,50));
+        fToC.setPreferredSize(new Dimension(200, 50));
         fToC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -80,44 +80,7 @@ public class Main extends javax.swing.JFrame {
         //Button lb to kg
 
 
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-        JButton FtoC = new JButton("Fahrenheit to Celsius");
-        FtoC.setPreferredSize(new Dimension(200, 50));
-        FtoC.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int v = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter a value in Fahrenheit:"));
-                TempConverter t = new TempConverter();
-                double finalv = t.convertFtoC((double) v);
-                DecimalFormat d = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, "" + v + " Fahrenheit = " + d.format(finalv) + "Celsius" );
 
-            }
-        });
-        panel.add(FtoC);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo((Component) null);
-        JButton CtoF = new JButton("Celsius to Fahrenheit");
-        CtoF.setPreferredSize(new Dimension(200, 50));
-        CtoF.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int v = Integer.parseInt((JOptionPane.showInputDialog(frame, "Enter a value in Celsius:")));
-                TempConverter t = new TempConverter();
-                double finalv = t.convertCtoF((double) v);
-                DecimalFormat d = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, "" + v + " Celsius = " + d.format(finalv) + "Fahrenheit" );
-
-            }
-        });
-        panel.add(CtoF);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo((Component) null);
     }
-
 }
 
