@@ -7,7 +7,7 @@ public class Conversion {
     private double input;
     private double output;
     private String conversionType;
-    private ArrayList<Conversion> conversions = new ArrayList<>();
+    static ArrayList<Conversion> conversions = new ArrayList<>();
 
     public Conversion(double input, double output, String conversionType) {
         this.input = input;
@@ -41,7 +41,7 @@ public class Conversion {
         return input + " " + conversionType + " = " + output;
     }
 
-    public void printConversions() {
+    public static void printConversions() {
         for (Conversion c : conversions) {
             System.out.println(c.toString());
         }

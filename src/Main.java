@@ -115,10 +115,30 @@ public class Main extends javax.swing.JFrame {
         frame.setVisible(true);
         frame.setLocationRelativeTo((Component) null);
 
+        JButton history = new JButton("History");
+        history.setPreferredSize((new Dimension(200, 50)));
+        history.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Conversion.conversions.size() <= 0){
+                    JOptionPane.showMessageDialog(frame, "No history yet");
+                }
+                Conversion.printConversions();
 
 
-        }
+            };
+
+        });
+        panel.add(history);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo((Component) null);
+    }
 }
+
+
+
+
 
 
 
