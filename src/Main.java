@@ -10,7 +10,7 @@ public class Main extends javax.swing.JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Layout
-        frame.setPreferredSize(new Dimension(700, 600));
+        frame.setPreferredSize(new Dimension(500, 207));
 
         //Color
         JPanel panel = new JPanel();
@@ -105,6 +105,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         panel.add(kgtolb);
+
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo((Component) null);
