@@ -3,8 +3,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 
 public class Main extends javax.swing.JFrame {
+    private static ArrayList<String> history = new ArrayList<String>();
+
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Converter");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,7 +114,10 @@ public class Main extends javax.swing.JFrame {
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo((Component) null);
-    }
+
+
+
+        }
 }
 
 
