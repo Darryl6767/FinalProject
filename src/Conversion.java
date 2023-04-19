@@ -6,12 +6,12 @@ public class Conversion {
     private double input;
     private double output;
     private String conversionType;
+    ArrayList<Conversion> conversions = new ArrayList<>();
 
     public Conversion(double input, double output, String conversionType) {
         this.input = input;
         this.output = output;
         this.conversionType = conversionType;
-        ArrayList<Conversion> conversions = new ArrayList<>();
         int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in miles:"));
         MileConverter i = new MileConverter();
         double finalValue = i.convertMtoKm(value);
