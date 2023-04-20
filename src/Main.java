@@ -15,7 +15,7 @@ public class Main extends javax.swing.JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Layout
-        frame.setPreferredSize(new Dimension(500, 207));
+        frame.setPreferredSize(new Dimension(500, 265));
 
         //Color
         JPanel panel = new JPanel();
