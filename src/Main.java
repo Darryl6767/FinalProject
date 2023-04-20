@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 
 public class Main extends javax.swing.JFrame {
-    private static ArrayList<String> history = new ArrayList<String>();
+    private static ArrayList<String> conversions = new ArrayList<String>();
+
 
 
     public static void main(String[] args) {
@@ -32,7 +33,10 @@ public class Main extends javax.swing.JFrame {
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertMtoKm(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " mi = " + df.format(finalValue) + " km");
+                String conversion = value + " mi = " + df.format(finalValue) + "km";
+                conversions.add(conversion);
+                JOptionPane.showMessageDialog(frame, conversion);
+                //JOptionPane.showMessageDialog(frame, "" + value + " mi = " + df.format(finalValue) + "km");
             }
         });
         panel.add(mitoKm);
@@ -47,7 +51,10 @@ public class Main extends javax.swing.JFrame {
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertKmtoM(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " km = " + df.format(finalValue) + " mi");
+                String conversion = value + " km = " + df.format(finalValue) + "mi";
+                conversions.add(conversion);
+                JOptionPane.showMessageDialog(frame, conversion);
+                //JOptionPane.showMessageDialog(frame, "" + value + " km = " + df.format(finalValue) + "mi");
             }
         });
         panel.add(kmtoMi);
@@ -62,7 +69,10 @@ public class Main extends javax.swing.JFrame {
                 TempConverter i = new TempConverter();
                 double finalValue = i.convertCtoF(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " C = " + df.format(finalValue) + " F");
+                String conversion = value + " C = " + df.format(finalValue) + " F";
+                conversions.add(conversion);
+                JOptionPane.showMessageDialog(frame, conversion);
+                //JOptionPane.showMessageDialog(frame, value + " C = " + df.format(finalValue) + " F");
             }
         });
         panel.add(cToF);
@@ -77,7 +87,10 @@ public class Main extends javax.swing.JFrame {
                 TempConverter i = new TempConverter();
                 double finalValue = i.convertFtoC(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " F = " + df.format(finalValue) + " C");
+                String conversion = value + " F = " + df.format(finalValue) + " C";
+                conversions.add(conversion);
+                JOptionPane.showMessageDialog(frame, conversion);
+                //JOptionPane.showMessageDialog(frame, value + " F = " + df.format(finalValue) + " C");
             }
         });
         panel.add(fToC);
@@ -92,7 +105,10 @@ public class Main extends javax.swing.JFrame {
                 PoundConverter i = new PoundConverter();
                 double finalValue = i.convertPoundstoKg(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " lb = " + df.format(finalValue) + " kg");
+                String conversion = value + " lb = " + df.format(finalValue) + " kg";
+                conversions.add(conversion);
+                JOptionPane.showMessageDialog(frame, conversion);
+                //JOptionPane.showMessageDialog(frame, value + " lb = " + df.format(finalValue) + " kg");
             }
         });
         panel.add(lbtokg);
@@ -106,7 +122,10 @@ public class Main extends javax.swing.JFrame {
                 PoundConverter i = new PoundConverter();
                 double finalValue = i.convertKgtoPounds(value);
                 DecimalFormat df = new DecimalFormat("#.#");
-                JOptionPane.showMessageDialog(frame, value + " kg = " + df.format(finalValue) + " lb");
+                String conversion = value + " kg = " + df.format(finalValue) + " lb";
+                conversions.add(conversion);
+                JOptionPane.showMessageDialog(frame, conversion);
+                //JOptionPane.showMessageDialog(frame, value + " kg = " + df.format(finalValue) + " lb");
             }
         });
         panel.add(kgtolb);
@@ -120,13 +139,15 @@ public class Main extends javax.swing.JFrame {
         history.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(Conversion.conversions.size() <= 0){
+                if (conversions.size() <= 0) {
                     JOptionPane.showMessageDialog(frame, "No history yet");
+                } else {
+                    JOptionPane.showMessageDialog(frame, conversions);
+
+
                 }
-                Conversion.printConversions();
-
-
-            };
+                ;
+            }
 
         });
         panel.add(history);
