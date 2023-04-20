@@ -7,11 +7,15 @@ import java.util.ArrayList;
 
 
 public class Main extends javax.swing.JFrame {
+
+    //Create an ArrayList to store conversions
     private static ArrayList<String> conversions = new ArrayList<String>();
 
 
-
+    //Main method
     public static void main(String[] args) {
+
+        //Create a JFrame
         JFrame frame = new JFrame("Converter");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
