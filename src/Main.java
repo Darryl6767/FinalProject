@@ -29,7 +29,7 @@ public class Main extends javax.swing.JFrame {
         mitoKm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in miles:"));
+                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value in miles:"));
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertMtoKm(value);
                 DecimalFormat df = new DecimalFormat("#.#");
@@ -47,7 +47,7 @@ public class Main extends javax.swing.JFrame {
         kmtoMi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in kilometers:"));
+                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value in kilometers:"));
                 MileConverter i = new MileConverter();
                 double finalValue = i.convertKmtoM(value);
                 DecimalFormat df = new DecimalFormat("#.#");
@@ -65,7 +65,7 @@ public class Main extends javax.swing.JFrame {
         cToF.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Celsius:"));
+                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value in Celsius:"));
                 TempConverter i = new TempConverter();
                 double finalValue = i.convertCtoF(value);
                 DecimalFormat df = new DecimalFormat("#.#");
@@ -83,7 +83,7 @@ public class Main extends javax.swing.JFrame {
         fToC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Fahrenheit:"));
+                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value in Fahrenheit:"));
                 TempConverter i = new TempConverter();
                 double finalValue = i.convertFtoC(value);
                 DecimalFormat df = new DecimalFormat("#.#");
@@ -101,7 +101,7 @@ public class Main extends javax.swing.JFrame {
         lbtokg.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Pounds:"));
+                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value in Pounds:"));
                 PoundConverter i = new PoundConverter();
                 double finalValue = i.convertPoundstoKg(value);
                 DecimalFormat df = new DecimalFormat("#.#");
@@ -118,7 +118,7 @@ public class Main extends javax.swing.JFrame {
         kgtolb.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int value = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter value in Kilograms:"));
+                double value = Double.parseDouble(JOptionPane.showInputDialog(frame, "Enter value in Kilograms:"));
                 PoundConverter i = new PoundConverter();
                 double finalValue = i.convertKgtoPounds(value);
                 DecimalFormat df = new DecimalFormat("#.#");
